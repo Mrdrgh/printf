@@ -39,3 +39,34 @@ int _print_percent(void)
 	_putchar ('%');
 	return (1);
 }
+
+/**
+ * _print_int - converts print int using puts or putchar idk now
+ * @i: the int
+ * Return: the number of chars printed
+*/
+
+int _print_int(va_list var)
+{
+	int chars_nbr = 0, reverse = 0;
+	int i = va_arg(var, int);
+
+	if (i < 0)
+	{
+		_putchar('-');
+		i = -i;
+		chars_nbr++;
+	}
+	while (i > 0)
+	{
+		reverse = reverse * 10 + i % 10;
+		i = i / 10;
+	}
+	while (reverse > 0)
+	{
+		_putchar(reverse % 10 + '0');
+		reverse /= 10;
+		chars_nbr++;
+	}
+	return (chars_nbr);
+}
