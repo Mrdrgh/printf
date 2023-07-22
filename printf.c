@@ -19,6 +19,8 @@ int _printf(const char *format, ...)
 	int (*function)();
 
 	va_start(var, format);
+	if (*s == '%' && !(s + 1))
+		return (-1);
 	while (s && *s)
 	{
 		if (*s != '%')
