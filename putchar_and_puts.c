@@ -10,7 +10,7 @@ int _putchar(char c)
 }
 /**
  * _puts - puts a string
- * @str: the string
+ * @s: the string
  * Return: the number of chars printed
 */
 int _puts(char *s)

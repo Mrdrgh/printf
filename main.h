@@ -8,7 +8,7 @@ int _putchar(char c);
 int _puts(char *str);
 /* specifiers struct*/
 /**
- * specifiers - a struct of specifiers chars and
+ * struct specifiers - a struct of specifiers chars and
  * their respective functions
  * @c: the char
  * @f: it's respective function
@@ -23,10 +23,10 @@ int _print_str(va_list);
 int _print_char(va_list);
 int _print_percent(void);
 /* pointers to functions */
-int ( * get_function(const char *s, specifiers *spec))();
+int (* get_function(const char *s, specifiers * spec))();
 /* function infos */
 /**
- * functions_infos - infos of how much chars consumed by each
+ * struct functions_infos - infos of how much chars consumed by each
  * function that returns a pointer to function
  * @chars_consumed: the num of chars consumed
  * @f: the f function returned by get_function
