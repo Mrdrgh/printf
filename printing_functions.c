@@ -10,7 +10,11 @@ int _print_str(va_list var)
 	int chars_nbr;
 
 	if (!s)
-		return (0);
+	{
+		s = "(null)";
+		chars_nbr = _puts(s);
+		return (chars_nbr);
+	}
 	chars_nbr = _puts(s);
 	return (chars_nbr);
 }
