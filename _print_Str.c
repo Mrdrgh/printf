@@ -21,7 +21,7 @@ int _print_hex_for_putS(int n)
 
     	// Print hexadecimal
     	for (i++; i < 8; i++) {
-        putchar(buffer[i]);
+        _putchar(buffer[i]);
     	}
 
     	return num_chars;
