@@ -25,6 +25,13 @@ int _print_percent(void);
 int _print_int(va_list);
 int _print_binary(va_list);
 int _binary_handler(unsigned int, int*);
+int _print_octal(va_list);
+int _octal_handler(unsigned int, int*);
+int _print_hexa_small(va_list);
+int _hexa_handler_small(unsigned int, int*);
+int _print_hexa_big(va_list);
+int _hexa_handler_big(unsigned int, int*);
+
 /* pointers to functions */
 int (* get_function(const char *s, specifiers * spec))();
 /* function infos */

@@ -15,6 +15,9 @@ int _printf(const char *format, ...)
 		{'i', _print_int},
 		{'d', _print_int},
 		{'b', _print_binary},
+		{'o', _print_octal},
+		{'x', _print_hexa_small},
+		{'X', _print_hexa_big},
 		{'\0', NULL}
 	};
 	int chars_nbr = 0;
