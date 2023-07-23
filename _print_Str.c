@@ -6,25 +6,24 @@
 */
 int _print_hex_for_putS(int n)
 {
-	char hex_digits[] = "0123456789ABCDEF";
-    	char buffer[9];  // Buffer to hold hexadecimal representation
-    	int i = 7;  // Start from the end of the buffer
-    	int num_chars = 0;
+    char hexadecimeals[] = "0123456789ABCDEF";
+    char buff[9];
+    int i = 7, num_chars = 0;
 
-    	// Convert to hexadecimal
-    	do {
-        	buffer[i] = hex_digits[n % 16];
-        	n /= 16;
-        	i--;
-        	num_chars++;
-        } while (n != 0);
+    do
+    {
+        buff[i] = hexadecimeals[n % 16];
+        n /= 16;
+        i--;
+        num_chars++;
+    } while (n != 0 || num_chars < 2);
 
-    	// Print hexadecimal
-    	for (i++; i < 8; i++) {
-        _putchar(buffer[i]);
-    	}
+    for (i++; i < 8; i++)
+    {
+        _putchar(buff[i]);
+    }
 
-    	return num_chars;
+    return num_chars;
 }
 /**
  * _putS - puts but the for S specifiers ,
@@ -71,6 +70,6 @@ int _print_Str(va_list var)
 		chars_nbr = _puts(s);
 		return (chars_nbr);
 	}
-	chars_nbr = _puts(s);
+	chars_nbr = _putS(s);
 	return (chars_nbr);
 }
