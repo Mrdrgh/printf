@@ -22,9 +22,28 @@ int _binary_handler(unsigned int i, int *j)
 */
 int _print_binary(va_list var)
 {
-	unsigned int i = va_arg(var, unsigned int);
-	int chars_nbr = 0;
+	int flagger = 0;
+	int compteur = 0, is;
+	int a = 1, b;
+	unsigned int nomber = va_arg(var, unsigned int);
+	unsigned int p;
 
-	_binary_handler(i, &chars_nbr);
-	return (chars_nbr);
+	for (is = 0; is < 32; is++)
+	{
+		p = ((a << (31 - is)) & nomber);
+		if (p >> (31 - is))
+			flagger = 1;
+		if (flagger)
+		{
+			b = p >> (31 - is);
+			_putchar(b + 48);
+			compteur++;
+		}
+	}
+	if (compteur == 0)
+	{
+		compteur++;
+		_putchar('0');
+	}
+	return (compteur);
 }
