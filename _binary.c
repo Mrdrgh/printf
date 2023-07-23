@@ -22,30 +22,32 @@ int _binary_handler(unsigned int i, int *j)
 */
 int _print_binary(va_list var)
 {
-	int flagger = 0;
-	int compteur = 0, is;
-	int a = 1, b;
-	unsigned int nomber = va_arg(var, unsigned int), p;
+	int compteur = 0, i;
+	int *tableau;
+	unsigned int n = va_arg(var, unsigned int);
+	unsigned int tomp = n;
 
-	for (is = 0; is < 32; is++)
+	while (n / 2 != 0)
 	{
-		p = ((a << (31 - is)) & nomber);
-		if (p >> (31 - is))
-		{
-			flagger = 1;
-		}
-		if (flagger)
-		{
-			b = p >> (31 - is);
-			_putchar(b + 48);
-			compteur++;
-		}
-	}
-
-	if (compteur == 0)
-	{
+		n /= 2;
 		compteur++;
-		_putchar('0');
 	}
+	compteur++;
+	tableau = malloc(compteur * sizeof(int));
+	if (tableau == NULL)
+	{
+		free(tableau);
+		return (0);
+	}
+	for (i = 0; i < compteur; i++)
+	{
+		tableau[i] = tomp % 2;
+		tomp /= 2;
+	}
+	for (i = compteur - 1; i >= 0; i--)
+	{
+		_putchar(tableau[i] + '0');
+	}
+	free(tableau);
 	return (compteur);
 }
