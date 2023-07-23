@@ -22,9 +22,28 @@ int _octal_handler(unsigned int i, int *j)
 */
 int _print_octal(va_list var)
 {
-	unsigned int i = va_arg(var, unsigned int);
-	int chars_nbr = 0;
+	int i, *tableau, compt = 0;
+	unsigned int nom = va_arg(var, unsigned int);
+	unsigned int tomp = nom;
 
-	_octal_handler(i, &chars_nbr);
-	return (chars_nbr);
+	while (nom / 8 != 0)
+	{
+		nom /= 8;
+		compt++;
+	}
+	compt++;
+	tableau = malloc(compt * sizeof(int));
+
+	for (i = 0; i < compt; i++)
+	{
+		tableau[i] = tomp % 8;
+		tomp /= 8;
+	}
+	for (i = compt - 1; i >= 0; i--)
+	{
+		_putchar(tableau[i] + '0');
+	}
+	free(tableau);
+	
+	return (compt);
 }
