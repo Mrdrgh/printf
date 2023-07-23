@@ -12,7 +12,7 @@ int _print_unsigned(va_list var)
 	j = j / 10;
 	number = j;
 	expoon = i = 1;
-	
+
 	if (number > 0)
 	{
 		while (number / 10 != 0)

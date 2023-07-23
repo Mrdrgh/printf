@@ -44,6 +44,6 @@ int _print_octal(va_list var)
 		_putchar(tableau[i] + '0');
 	}
 	free(tableau);
-	
+
 	return (compt);
 }
