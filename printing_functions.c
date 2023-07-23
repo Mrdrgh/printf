@@ -45,28 +45,41 @@ int _print_percent(void)
  * @i: the int
  * Return: the number of chars printed
 */
-
 int _print_int(va_list var)
 {
-	int chars_nbr = 0, reverse = 0;
-	int i = va_arg(var, int);
 
-	if (i < 0)
+	int j = va_arg(var, int);
+	int number, last = j % 10, digit, expo, i;
+
+	j = j / 10;
+	number = j;
+	expo = i = 1;
+	if (last < 0)
 	{
 		_putchar('-');
-		i = -i;
-		chars_nbr++;
+		number = -number;
+		j = -j;
+		last = -last;
+		i++;
 	}
-	while (i > 0)
+	if (number > 0)
 	{
-		reverse = reverse * 10 + i % 10;
-		i = i / 10;
+		while (number / 10 != 0)
+		{
+			expo = expo * 10;
+			number = number / 10;
+		}
+		number = j;
+		while (expo > 0)
+		{
+			digit = number / expo;
+			_putchar(digit + '0');
+			number = number - (digit * expo);
+			expo = expo / 10;
+			i++;
+		}
 	}
-	while (reverse > 0)
-	{
-		_putchar(reverse % 10 + '0');
-		reverse /= 10;
-		chars_nbr++;
-	}
-	return (chars_nbr);
+	_putchar(last + '0');
+
+	return (i);
 }
