@@ -5,39 +5,24 @@
 
 int main()
 {
+	int x = 0;
+	int *p = &x;
 	int len_1, len_2;
 
-	/* ===========> %d <=========== */
+	/* ===========> %b <=========== */
 	printf("----------------------\n");
-	printf("--> INT(%d) CASES <---\n",0);
+	printf("---> BINARY CASES <---\n");
 	printf("----------------------\n");
-	len_1 = printf("%d\n", 0);
-	len_2 = _printf("%d\n", 0);
+	len_1 = printf("%b\n", 0);
+	len_2 = _printf("%b\n", 0);
 	assert(len_1 == len_2);
 
-	len_2 = printf("%d\n", INT_MIN);
-	len_1 = _printf("%d\n", INT_MIN);
+	len_2 = printf("%b\n", 255);
+	len_1 = _printf("%b\n", 255);
 	assert(len_1 == len_2);
 
-	len_1 = printf("%d\n", INT_MAX);
-	len_2 = _printf("%d\n", INT_MAX);
+	len_1 = printf("%b\n", UINT_MAX);
+	len_2 = _printf("%b\n", UINT_MAX);
 	assert(len_1 == len_2);
-
-	/* ===========> %i <=========== */
-	printf("----------------------\n");
-	printf("--> INT(%i) CASES <---\n",0);
-	printf("----------------------\n");
-	len_1 = printf("%i\n", 0);
-	len_2 = _printf("%i\n", 0);
-	assert(len_1 == len_2);
-
-	len_2 = printf("%i\n", INT_MIN);
-	len_1 = _printf("%i\n", INT_MIN);
-	assert(len_1 == len_2);
-
-	len_1 = printf("%i\n", INT_MAX);
-	len_2 = _printf("%i\n", INT_MAX);
-	assert(len_1 == len_2);
-
 	return (0);
 }

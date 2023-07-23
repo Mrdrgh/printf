@@ -42,7 +42,7 @@ int _print_percent(void)
 
 /**
  * _print_int - converts print int using puts or putchar idk now
- * @i: the int
+ * @var: the int
  * Return: the number of chars printed
 */
 int _print_int(va_list var)
@@ -83,3 +83,4 @@ int _print_int(va_list var)
 
 	return (i);
 }
+

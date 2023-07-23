@@ -14,6 +14,7 @@ int _printf(const char *format, ...)
 		{'%', _print_percent},
 		{'i', _print_int},
 		{'d', _print_int},
+		{'b', _print_binary},
 		{'\0', NULL}
 	};
 	int chars_nbr = 0;
