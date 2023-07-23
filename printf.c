@@ -9,15 +9,11 @@ int _printf(const char *format, ...)
 {
 	va_list var;
 	specifiers specs[] = {
-		{'c', _print_char},
-		{'s', _print_str},
-		{'%', _print_percent},
-		{'i', _print_int},
-		{'d', _print_int},
-		{'b', _print_binary},
-		{'o', _print_octal},
-		{'x', _print_hexa_small},
-		{'X', _print_hexa_big},
+		{'c', _print_char}, {'s', _print_str},
+		{'%', _print_percent}, {'i', _print_int},
+		{'d', _print_int}, {'b', _print_binary}, {'o', _print_octal},
+		{'x', _print_hexa_small}, {'X', _print_hexa_big},
+		{'u', _print_int},
 		{'\0', NULL}
 	};
 	int chars_nbr = 0;

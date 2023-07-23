@@ -22,9 +22,9 @@ int _binary_handler(unsigned int i, int *j)
 */
 int _print_binary(va_list var)
 {
-	unsigned  i = va_arg(var, unsigned int);
+	unsigned int i = va_arg(var, unsigned int);
 	int chars_nbr = 0;
 
 	_binary_handler(i, &chars_nbr);
-	return(chars_nbr);
+	return (chars_nbr);
 }

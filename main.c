@@ -73,7 +73,7 @@ int main()
 	len_2 = _printf("%X\n", UINT_MAX);
 	assert(len_1 == len_2);
 
-	
+
 
 	return (0);
 }

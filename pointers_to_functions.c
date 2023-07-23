@@ -13,7 +13,7 @@ int ((*get_function(const char *s, specifiers * specs))
 {
 	const char *start = s;
 	int i = 0;
-	
+
 	while (*s)
 	{
 		i = 0;
