@@ -11,7 +11,7 @@ int _printf(const char *format, ...)
 	specifiers specs[] = {
 		{'c', _print_char}, {'s', _print_str},
 		{'%', _print_percent}, {'i', _print_int},
-		{'d', _print_int}, {'o', _print_octal},
+		{'d', _print_int},
 		{'x', _print_hexa_small}, {'X', _print_hexa_big},
 		{'u', _print_int},
 		{'\0', NULL}
