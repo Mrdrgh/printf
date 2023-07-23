@@ -6,40 +6,40 @@
 */
 int handle_S(va_list args)
 {
-char *str = va_arg(args, char *);
-int count = 0;
+char *stringg = va_arg(args, char *);
+int compteuur = 0;
 
-if (str == NULL)
+if (stringg == NULL)
 {
-char null_str[] = "(null)";
-for (int i = 0; null_str[i] != '\0'; i++)
+char null_stringg[] = "(null)";
+for (int i = 0; null_stringg[i] != '\0'; i++)
 {
-_putchar(null_str[i]);
-count++;
+_putchar(null_stringg[i]);
+compteuur++;
 }
-return (count);
+return (compteuur);
 }
-for (int i = 0; str[i] != '\0'; i++)
+for (int i = 0; stringg[i] != '\0'; i++)
 {
-unsigned char c = str[i];
+unsigned char c = stringg[i];
 
 if (c >= 32 && c <= 127)
 {
 _putchar(c);
-count++;
+compteuur++;
 }
 else
 {
 _putchar('\\');
-count++;
+compteuur++;
 _putchar('x');
-count++;
+compteuur++;
 _putchar("0123456789ABCDEF"[c / 16]);
-count++;
+compteuur++;
 _putchar("0123456789ABCDEF"[c % 16]);
-count++;
+compteuur++;
 }
 }
 
-return (count);
+return (compteuur);
 }
