@@ -13,7 +13,7 @@ int _printf(const char *format, ...)
 		{'%', _print_percent}, {'i', _print_int},
 		{'d', _print_int}, {'b', _print_binary}, {'o', _print_octal},
 		{'x', _print_hexa_small}, {'X', _print_hexa_big},
-		{'u', _print_unsigned}, {'S' , _print_Str},
+		{'u', _print_unsigned}, {'S' , handle_S},
 		{'\0', NULL}
 	};
 	int chars_nbr = 0;
