@@ -31,6 +31,7 @@ int _print_hexa_small(va_list);
 int _hexa_handler_small(unsigned int, int*);
 int _print_hexa_big(va_list);
 int _hexa_handler_big(unsigned int, int*);
+int _print_unsigned(va_list);
 
 /* pointers to functions */
 int (* get_function(const char *s, specifiers * spec))();
