@@ -78,6 +78,11 @@ int _print_hexa_small_without_va_list(unsigned long int j)
 	unsigned long int number = j;
 	unsigned long int tompon = number;
 
+	if (j == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
 	while (number / 16 != 0)
 	{
 		number /= 16;
