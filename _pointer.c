@@ -13,7 +13,11 @@ int _print_pointer(va_list var)
 
 	if (!p)
 	{
-		chars_nbr += _puts("(null)");
+		chars_nbr += _putchar('(');
+		chars_nbr += _putchar('n');
+		chars_nbr += _putchar('i');
+		chars_nbr += _putchar('l');
+		chars_nbr += _putchar(')');
 		return (chars_nbr);
 	}
 	chars_nbr += _putchar('0');
