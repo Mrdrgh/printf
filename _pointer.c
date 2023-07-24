@@ -9,7 +9,7 @@ int _print_pointer(va_list var)
 {
 	void *p = va_arg(var, void*);
 	int chars_nbr = 0;
-	long int value;
+	unsigned long int value;
 
 	if (!p)
 	{
@@ -19,6 +19,6 @@ int _print_pointer(va_list var)
 	chars_nbr += _putchar('0');
 	chars_nbr += _putchar('x');
 	value = (unsigned long int) p;
-	chars_nbr += _print_hexa_small_without_va_list((unsigned long int) value);
+	chars_nbr += _print_hexa_small_without_va_list(value);
 	return (chars_nbr);
 }

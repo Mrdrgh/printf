@@ -26,16 +26,12 @@ int _printf(const char *format, ...)
 	while (s && *s)
 	{
 		if (*s != '%')
-		{
 			chars_nbr += _putchar(*s);
-		}
 		else
 		{
 			function = get_function(s + 1, specs);
 			if (!function)
-			{
 				chars_nbr += _putchar(*s);
-			}
 			else
 			{
 				chars_nbr += function(var);
