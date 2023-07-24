@@ -74,7 +74,7 @@ int _print_hexa_big(va_list var)
 */
 int _print_hexa_small_without_va_list(unsigned long int j)
 {
-	int *tableau_de_nbrs, i, compteur = 0;
+	unsigned long int *tableau_de_nbrs, i, compteur = 0;
 	unsigned long int number = j;
 	unsigned long int tompon = number;
 
@@ -84,7 +84,7 @@ int _print_hexa_small_without_va_list(unsigned long int j)
 		compteur++;
 	}
 	compteur++;
-	tableau_de_nbrs = malloc(compteur * sizeof(int));
+	tableau_de_nbrs = malloc(compteur * sizeof(unsigned long int));
 
 	for (i = 0; i < compteur; i++)
 	{
