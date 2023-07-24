@@ -13,7 +13,7 @@ int _print_pointer(va_list var)
 
 	if (!p)
 	{
-		chars_nbr += _puts("(nilllllll)");
+		chars_nbr += _puts("(nil)");
 		return (chars_nbr);
 	}
 	chars_nbr += _putchar('0');
