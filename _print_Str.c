@@ -42,5 +42,5 @@ int handle_S(va_list args)
 		}
 	}
 
-return (compteuur + 1);
+return (compteuur);
 }
