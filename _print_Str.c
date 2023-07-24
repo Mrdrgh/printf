@@ -18,13 +18,13 @@ int handle_S(va_list args)
 			_putchar(null_stringg[i]);
 			compteuur++;
 		}
-		return (compteuur + 2);
+		return (compteuur);
 	}
 	for (i = 0; stringg[i] != '\0'; i++)
 	{
 		c = stringg[i];
 
-		if (c >= 32 && c <= 127)
+		if (c >= 32 && c < 127)
 		{
 		_putchar(c);
 		compteuur++;
