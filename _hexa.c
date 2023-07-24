@@ -74,7 +74,7 @@ int _print_hexa_big(va_list var)
 */
 int _print_hexa_small_without_va_list(unsigned long int j)
 {
-	unsigned long int *tableau_de_nbrs, i, compteur = 0;
+	long int *tableau_de_nbrs, i, compteur = 0;
 	unsigned long int number = j;
 	unsigned long int tompon = number;
 
@@ -84,14 +84,14 @@ int _print_hexa_small_without_va_list(unsigned long int j)
 		compteur++;
 	}
 	compteur++;
-	tableau_de_nbrs = malloc(compteur * sizeof(unsigned long int));
+	tableau_de_nbrs = malloc(compteur * sizeof(long int));
 
 	for (i = 0; i < compteur; i++)
 	{
 		tableau_de_nbrs[i] = tompon % 16;
 		tompon /= 16;
 	}
-	for (i = compteur - 1; i == 0; i--)
+	for (i = compteur - 1; i >= 0; i--)
 	{
 		if (tableau_de_nbrs[i] > 9)
 			tableau_de_nbrs[i] = tableau_de_nbrs[i] + 39;
