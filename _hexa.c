@@ -80,8 +80,11 @@ int _print_hexa_small_without_va_list(unsigned long int j)
 
 	if (j == 0)
 	{
-		_putchar('0');
-		return (1);
+		for (; compteur < 12; compteur++)
+		{
+			_putchar('0');
+		}
+		return (12);
 	}
 	while (number / 16 != 0)
 	{
