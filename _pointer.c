@@ -9,7 +9,7 @@ int _print_pointer(va_list var)
 {
 	void *p = va_arg(var, void*);
 	int chars_nbr = 0;
-	unsigned long int value;
+	long int value;
 
 	if (!p)
 	{
