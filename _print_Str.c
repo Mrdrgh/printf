@@ -8,7 +8,7 @@ int handle_S(va_list args)
 {
 	char *stringg = va_arg(args, char *);
 	int compteuur = 0, i;
-	char null_stringg[] = "(null)";
+	char null_stringg[] = "(nil)";
 
 	if (stringg == NULL)
 	{
