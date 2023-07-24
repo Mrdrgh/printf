@@ -9,6 +9,7 @@ int handle_S(va_list args)
 	char *stringg = va_arg(args, char *);
 	int compteuur = 0, i;
 	char null_stringg[] = "(null)";
+	unsigned char c = stringg[i];
 
 	if (stringg == NULL)
 	{
@@ -17,13 +18,12 @@ int handle_S(va_list args)
 			_putchar(null_stringg[i]);
 			compteuur++;
 		}
-	return (-1);
+		return (compteuur);
 	}
 	for (i = 0; stringg[i] != '\0'; i++)
 	{
-		unsigned char c = stringg[i];
 
-		if (c >= 32 && c <= 127)
+		if (c >= 32 && c < 127)
 		{
 		_putchar(c);
 		compteuur++;
