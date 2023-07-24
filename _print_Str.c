@@ -18,7 +18,7 @@ int handle_S(va_list args)
 			_putchar(null_stringg[i]);
 			compteuur++;
 		}
-		return (compteuur + 1);
+		return (compteuur);
 	}
 	for (i = 0; stringg[i] != '\0'; i++)
 	{
@@ -42,5 +42,5 @@ int handle_S(va_list args)
 		}
 	}
 
-return (compteuur);
+return (compteuur + 1);
 }
