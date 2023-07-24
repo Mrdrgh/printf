@@ -7,6 +7,8 @@
 int _putchar(char c);
 int _puts(char *str);
 /* specifiers struct*/
+
+
 /**
  * struct specifiers - a struct of specifiers chars and
  * their respective functions
@@ -19,6 +21,8 @@ typedef struct specifiers
 	int (*f)();
 } specifiers;
 /* printing functions*/
+
+
 int _print_str(va_list);
 int _print_char(va_list);
 int _print_percent(void);
@@ -39,8 +43,13 @@ int handle_S(va_list);
 int _print_pointer(va_list);
 int _print_hexa_small_without_va_list(unsigned long int);
 /* pointers to functions */
+
+
 int (* get_function(const char *s, specifiers * spec))();
+
 /* function infos */
+
+
 /**
  * struct functions_infos - infos of how much chars consumed by each
  * function that returns a pointer to function
@@ -52,6 +61,23 @@ typedef struct functions_infos
 	int chars_consumed;
 	int (*f)();
 } functions_info;
+/*flags baby*/
+
+
+/**
+ * parameters - a struct to hold the parameteres of each func
+ * @space: the space parameter
+ * @hash: the hashtag parameter
+ * @plus: the plus parameter
+*/
+typedef struct parameters
+{
+	unsigned int space;
+	unsigned int plus;
+	unsigned int hash;
+} parameters;
+parameters* _init_params(parameters *);
+int get_flag(const char *, parameters *);
 /*PRINTF*/
 int _printf(const char *fomat, ...);
 #endif

@@ -13,22 +13,29 @@ int _printf(const char *format, ...)
 		{'%', _print_percent}, {'i', _print_int},
 		{'d', _print_int}, {'b', _print_binary}, {'o', _print_octal},
 		{'x', _print_hexa_small}, {'X', _print_hexa_big},
-		{'u', _print_unsigned}, {'S', handle_S},{'p', _print_pointer},
+		{'u', _print_unsigned}, {'S', handle_S}, {'p', _print_pointer},
 		{'\0', NULL}
 	};
 	int chars_nbr = 0;
 	const char *s = format;
 	int (*function)();
+	parameters *params = malloc(sizeof(parameters));
 
+	params =  _init_params(params);
 	va_start(var, format);
 	if (!format || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
-	while (s && *s)
+	while (*s)
 	{
 		if (*s != '%')
 			chars_nbr += _putchar(*s);
-		else
+		else if (*s == '%')
 		{
+			if (!*(s + 1))
+				return (-1);
+			s += get_flag(s + 1, params);
+			if (*s)
+				return (-1);
 			function = get_function(s + 1, specs);
 			if (!function)
 				chars_nbr += _putchar(*s);
