@@ -11,7 +11,11 @@ int _print_pointer(va_list var)
 	int chars_nbr = 0;
 	unsigned long int value;
 
-	
+	if (!p)
+	{
+		chars_nbr += _puts("(nilllllll)");
+		return (chars_nbr);
+	}
 	chars_nbr += _putchar('0');
 	chars_nbr += _putchar('x');
 	value = (unsigned long int) p;
