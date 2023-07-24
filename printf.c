@@ -32,6 +32,8 @@ int _printf(const char *format, ...)
 		else if (*s == '%')
 		{
 			s += get_flag(s + 1, params);
+			if (!*s)
+				break;
 			function = get_function(s + 1, specs);
 			if (!function)
 				chars_nbr += _putchar(*s);
