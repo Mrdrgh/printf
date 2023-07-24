@@ -19,6 +19,6 @@ int _print_pointer(va_list var)
 	chars_nbr += _putchar('0');
 	chars_nbr += _putchar('x');
 	value = (unsigned long int) p;
-	chars_nbr += _print_hexa_small_without_va_list(value);
+	chars_nbr += _print_hexa_small_without_va_list((unsigned long int) value);
 	return (chars_nbr);
 }
