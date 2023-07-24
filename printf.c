@@ -25,13 +25,12 @@ int _printf(const char *format, ...)
 	va_start(var, format);
 	if (!format || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
-	while (*s)
+	while (*s && s)
 	{
 		if (*s != '%')
 			chars_nbr += _putchar(*s);
 		else if (*s == '%')
 		{
-			
 			function = get_function(s + 1, specs);
 			if (!function)
 				chars_nbr += _putchar(*s);
