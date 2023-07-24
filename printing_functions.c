@@ -45,9 +45,8 @@ int _print_percent(void)
  * @var: the int
  * Return: the number of chars printed
 */
-int _print_int(va_list var)
+int _print_int(va_list var, parameters *p)
 {
-
 	int j = va_arg(var, int);
 	int number, last = j % 10, digit, expo, i;
 
@@ -62,6 +61,10 @@ int _print_int(va_list var)
 		last = -last;
 		i++;
 	}
+	if (p->space)
+		i += _putchar(' ');
+	if (number > 0 && p->plus) 
+		i += _putchar('+');
 	if (number > 0)
 	{
 		while (number / 10 != 0)

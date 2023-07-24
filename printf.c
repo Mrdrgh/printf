@@ -32,14 +32,14 @@ int _printf(const char *format, ...)
 		else if (*s == '%')
 		{
 			s += get_flag(s + 1, params);
-			if (!*s)
+			if (!*(s + 1))
 				break;
 			function = get_function(s + 1, specs);
 			if (!function)
 				chars_nbr += _putchar(*s);
 			else
 			{
-				chars_nbr += function(var);
+				chars_nbr += function(var, params);
 				s++;
 			}
 		}

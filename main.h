@@ -21,12 +21,22 @@ typedef struct specifiers
 	int (*f)();
 } specifiers;
 /* printing functions*/
-
-
+/**
+ * parameters - a struct to hold the parameteres of each func
+ * @space: the space parameter
+ * @hash: the hashtag parameter
+ * @plus: the plus parameter
+*/
+typedef struct parameters
+{
+	unsigned int space;
+	unsigned int plus;
+	unsigned int hash;
+} parameters;
 int _print_str(va_list);
 int _print_char(va_list);
 int _print_percent(void);
-int _print_int(va_list);
+int _print_int(va_list, parameters *);
 int _print_binary(va_list);
 int _binary_handler(unsigned int, int*);
 int _print_octal(va_list);
@@ -64,18 +74,8 @@ typedef struct functions_infos
 /*flags baby*/
 
 
-/**
- * parameters - a struct to hold the parameteres of each func
- * @space: the space parameter
- * @hash: the hashtag parameter
- * @plus: the plus parameter
-*/
-typedef struct parameters
-{
-	unsigned int space;
-	unsigned int plus;
-	unsigned int hash;
-} parameters;
+
+
 parameters* _init_params(parameters *);
 int get_flag(const char *, parameters *);
 /*PRINTF*/
