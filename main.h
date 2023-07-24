@@ -36,6 +36,8 @@ int _print_Str(va_list);
 int _putS(char*);
 int _print_hex_for_putS(int);
 int handle_S(va_list);
+int _print_pointer(va_list);
+int _print_hexa_small_without_va_list(unsigned long int);
 /* pointers to functions */
 int (* get_function(const char *s, specifiers * spec))();
 /* function infos */
