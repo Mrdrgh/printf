@@ -7,19 +7,19 @@
 int handle_S(va_list args)
 {
 char *stringg = va_arg(args, char *);
-int compteuur = 0;
+int compteuur = 0, i;
 
 if (stringg == NULL)
 {
 char null_stringg[] = "(null)";
-for (int i = 0; null_stringg[i] != '\0'; i++)
+for (i = 0; null_stringg[i] != '\0'; i++)
 {
 _putchar(null_stringg[i]);
 compteuur++;
 }
 return (compteuur);
 }
-for (int i = 0; stringg[i] != '\0'; i++)
+for (i = 0; stringg[i] != '\0'; i++)
 {
 unsigned char c = stringg[i];
 
