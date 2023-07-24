@@ -18,7 +18,7 @@ int handle_S(va_list args)
 			_putchar(null_stringg[i]);
 			compteuur++;
 		}
-		return (compteuur);
+		return (compteuur + 1);
 	}
 	for (i = 0; stringg[i] != '\0'; i++)
 	{
