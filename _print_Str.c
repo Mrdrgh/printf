@@ -8,7 +8,7 @@ int handle_S(va_list args)
 {
 	char *stringg = va_arg(args, char *);
 	int compteuur = 0, i;
-	char null_stringg[] = "(nil)";
+	char null_stringg[] = "(null)";
 
 	if (stringg == NULL)
 	{
@@ -17,7 +17,7 @@ int handle_S(va_list args)
 			_putchar(null_stringg[i]);
 			compteuur++;
 		}
-	return (compteuur);
+	return (compteuur + 1);
 	}
 	for (i = 0; stringg[i] != '\0'; i++)
 	{
