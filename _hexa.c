@@ -91,7 +91,7 @@ int _print_hexa_small_without_va_list(unsigned long int j)
 		tableau_de_nbrs[i] = tompon % 16;
 		tompon /= 16;
 	}
-	for (i = compteur - 1; i >= 0; i--)
+	for (i = compteur - 1; i == 0; i--)
 	{
 		if (tableau_de_nbrs[i] > 9)
 			tableau_de_nbrs[i] = tableau_de_nbrs[i] + 39;
