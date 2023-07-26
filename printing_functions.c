@@ -48,11 +48,15 @@ int _print_percent(void)
 int _print_int(va_list var, parameters *p)
 {
 	int j = va_arg(var, int);
-	int number, last = j % 10, digit, expo, i;
+	int number, last = j % 10, digit, expo = 1, i = 1;
 
+	if (p->space)
+		i += _putchar(' ');
+	if (j >= 0 && p->plus) 
+		i += _putchar('+');
 	j = j / 10;
 	number = j;
-	expo = i = 1;
+
 	if (last < 0)
 	{
 		_putchar('-');
@@ -61,10 +65,7 @@ int _print_int(va_list var, parameters *p)
 		last = -last;
 		i++;
 	}
-	if (p->space)
-		i += _putchar(' ');
-	if (number > 0 && p->plus) 
-		i += _putchar('+');
+	
 	if (number > 0)
 	{
 		while (number / 10 != 0)
