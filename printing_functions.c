@@ -83,7 +83,7 @@ int _print_int(va_list var, parameters *p)
 		}
 	}
 	_putchar(last + '0');
-
+	p = _init_params(p);
 	return (i);
 }
 

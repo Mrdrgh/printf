@@ -5,12 +5,17 @@
  * @var: the vars list
  * Return: the number of chars printed
 */
-int _print_hexa_small(va_list var)
+int _print_hexa_small(va_list var, parameters *p)
 {
 	int *tableau_de_nbrs, i, compteur = 0;
 	unsigned int number = va_arg(var, unsigned int);
 	unsigned int tompon = number;
 
+	if (p->hash && number)
+	{
+		_putchar('0');
+		_putchar('x');
+	}
 	while (number / 16 != 0)
 	{
 		number /= 16;
@@ -31,7 +36,8 @@ int _print_hexa_small(va_list var)
 		_putchar(tableau_de_nbrs[i] + '0');
 	}
 	free(tableau_de_nbrs);
-	return (compteur);
+	p = _init_params(p);
+	return (compteur + 2);
 }
 /**
  * _print_hexa_big - prints a number in hexa small
@@ -39,12 +45,17 @@ int _print_hexa_small(va_list var)
  * @var: the vars list
  * Return: the number of chars printed
 */
-int _print_hexa_big(va_list var)
+int _print_hexa_big(va_list var, parameters *p)
 {
 	int *tableau_de_nbrs, i, compteur = 0;
 	unsigned int number = va_arg(var, unsigned int);
 	unsigned int tompon = number;
 
+	if (p->hash && number)
+	{
+		_putchar('0');
+		_putchar('X');
+	}
 	while (number / 16 != 0)
 	{
 		number /= 16;
@@ -65,7 +76,8 @@ int _print_hexa_big(va_list var)
 		_putchar(tableau_de_nbrs[i] + '0');
 	}
 	free(tableau_de_nbrs);
-	return (compteur);
+	p = _init_params(p);
+	return (compteur + 2);
 }
 /**
  * _print_hexa_small_without_va_list - same as print_hexa_small

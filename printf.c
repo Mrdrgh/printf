@@ -45,5 +45,6 @@ int _printf(const char *format, ...)
 		}
 		s++;
 	}
+	free(params);
 	return (chars_nbr);
 }

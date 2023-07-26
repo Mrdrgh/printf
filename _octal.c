@@ -20,12 +20,17 @@ int _octal_handler(unsigned int i, int *j)
  * @var: the vars list
  * Return: the number of chars printed
 */
-int _print_octal(va_list var)
+int _print_octal(va_list var, parameters *p)
 {
 	int i, *tableau, compt = 0;
 	unsigned int nom = va_arg(var, unsigned int);
 	unsigned int tomp = nom;
 
+	if (p->hash && nom)
+	{
+		_putchar('0');
+		_putchar('x');
+	}
 	while (nom / 8 != 0)
 	{
 		nom /= 8;
@@ -44,6 +49,6 @@ int _print_octal(va_list var)
 		_putchar(tableau[i] + '0');
 	}
 	free(tableau);
-
-	return (compt);
+	p = _init_params(p);
+	return (compt + 2);
 }
